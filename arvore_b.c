@@ -39,7 +39,7 @@ int GerarCor(){
 
 void Insere(TArvore ** arvore, TCor cor){
 
-    if (EhVazia(*arvore) == True){
+    if (EhVazia(*arvore)){
         (*arvore) = (TArvore*)malloc(sizeof(TArvore));
         (*arvore)->filho_dir = NULL;
         (*arvore)->filho_esq = NULL;
@@ -50,20 +50,10 @@ void Insere(TArvore ** arvore, TCor cor){
         TDirecao direcao = GerarDirecao();
 
         if (ComparaDirecoes(direcao, Direita)){
-            if ((*arvore)->filho_dir == NULL){
-                Insere(&(*arvore)->filho_dir, cor);
-            }
-            else{
-                Insere(&(*arvore)->filho_dir, cor);
-            }
+            Insere(&(*arvore)->filho_dir, cor);
         }
         else{
-            if ((*arvore)->filho_esq == NULL){
-                Insere(&(*arvore)->filho_esq, cor);
-            }
-            else{
-                Insere(&(*arvore)->filho_esq, cor);
-            }
+            Insere(&(*arvore)->filho_esq, cor);
         }
     }
 }
