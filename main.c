@@ -5,10 +5,14 @@
 int main()
 {
     TArvore * arvore = CriarArvore();
+    TCor * cor;
 
-    Insere(&arvore, 2);
+    Insere(&arvore, Azul, Esquerda);
+    Insere(&arvore, Vermelho, Direita);
+    Insere(&arvore, Azul, Esquerda);
 
-    printf("%d", arvore->valor);
+
+    ImprimirArvore(arvore);
 
     return 0;
 }

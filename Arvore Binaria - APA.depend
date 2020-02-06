@@ -1,11 +1,11 @@
 # depslib dependency file v1.0
-1580941100 source:d:\projetos\c\arvore binaria - apa\main.c
+1580954964 source:d:\projetos\c\arvore binaria - apa\main.c
 	<stdio.h>
 	<stdlib.h>
 	"arvore_b.c"
 
-1580941155 d:\projetos\c\arvore binaria - apa\arvore_b.c
+1580954991 d:\projetos\c\arvore binaria - apa\arvore_b.c
 	"arvore_b.h"
 
-1580940663 d:\projetos\c\arvore binaria - apa\arvore_b.h
+1580954957 d:\projetos\c\arvore binaria - apa\arvore_b.h
 
