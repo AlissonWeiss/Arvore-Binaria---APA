@@ -19,26 +19,58 @@ int EhFolha(TArvore * arvore){
     return False;
 }
 
-void Insere(TArvore ** arvore, TCor * cor, TDirecao direcao){
+int GerarDirecao(){
+
+    int aux = rand();
+    if (aux % 2 == 0){
+        return Direita;
+    }
+    return Esquerda;
+}
+
+int GerarCor(){
+
+    int aux = rand();
+    if (aux % 2 == 0){
+        return Azul;
+    }
+    return Vermelho;
+}
+
+void Insere(TArvore ** arvore, TCor cor){
 
     if (EhVazia(*arvore) == True){
-        *arvore = (TArvore*)malloc(sizeof(TArvore));
+        (*arvore) = (TArvore*)malloc(sizeof(TArvore));
         (*arvore)->filho_dir = NULL;
         (*arvore)->filho_esq = NULL;
         (*arvore)->cor = cor;
     }
     else{
 
+        TDirecao direcao = GerarDirecao();
+
         if (ComparaDirecoes(direcao, Direita)){
             if ((*arvore)->filho_dir == NULL){
-                Insere(&(*arvore)->filho_dir, cor, direcao);
+                Insere(&(*arvore)->filho_dir, cor);
+            }
+            else{
+                Insere(&(*arvore)->filho_dir, cor);
             }
         }
         else{
             if ((*arvore)->filho_esq == NULL){
-                Insere(&(*arvore)->filho_esq, cor, direcao);
+                Insere(&(*arvore)->filho_esq, cor);
+            }
+            else{
+                Insere(&(*arvore)->filho_esq, cor);
             }
         }
+    }
+}
+void GerarArvoreAleatoria(TArvore * arvore, int n){
+
+    for(int i = 0; i < n; i++){
+        Insere(arvore, GerarCor());
     }
 }
 

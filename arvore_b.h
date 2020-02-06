@@ -8,7 +8,7 @@ typedef enum direcao {Esquerda = 0, Direita}TDirecao;
 
 typedef struct arvore{
 
-    TCor * cor;
+    TCor cor;
     struct arvore * filho_esq;
     struct arvore * filho_dir;
 
@@ -17,10 +17,11 @@ typedef struct arvore{
 TArvore * CriarArvore();
 int EhVazia(TArvore * arvore);
 int EhFolha(TArvore * no);
-void Insere(TArvore ** arvore, TCor * cor, TDirecao direcao);
+void Insere(TArvore ** arvore, TCor cor);
 void GerarArvoreAleatoria(TArvore * arvore, int n);
 void ImprimirArvore(TArvore * arvore);
 
+int GerarDirecao();
 int ComparaDirecoes(TDirecao dir_1, TDirecao dir_2);
 
 #endif // ARVORE_B_H_INCLUDED

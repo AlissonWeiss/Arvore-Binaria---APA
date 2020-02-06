@@ -5,12 +5,12 @@
 int main()
 {
     TArvore * arvore = CriarArvore();
-    TCor * cor;
 
-    Insere(&arvore, Azul, Esquerda);
-    Insere(&arvore, Vermelho, Direita);
-    Insere(&arvore, Azul, Esquerda);
+    printf("Digite a quantidade de nohs que a arvore tera: ");
+    int n;
+    scanf(" %d", &n);
 
+    GerarArvoreAleatoria(&arvore, n);
 
     ImprimirArvore(arvore);
 
